@@ -7,29 +7,24 @@ const  Chart4 = () => {
   const [isLoading, setLoading] = useState(true);
   const [dataApi, setData] = useState<any[]>([]);
 
-  const getMovies = async () => {
-   
-      const response = await fetch('https://reactnative.dev/movies.json');
-      const json = await response.json();
-      setData(json.movies);
-     
+  const getMovies =  () => {
+    return fetch('https://reactnative.dev/movies.json')
+    .then((response) => response.json())
+    .then((json) => {
+      return json.movies;
+      
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
   useEffect(() => {
-    getMovies();
+    getMovies()
     
   }, []);
 
-const title:string[]=dataApi.map((item)=>{
-  return(
-    item.title
-  )
-})
-const data=dataApi.map((item,key)=>{
-  return(
-    item.releaseYear
-  )
-})
+
 
 
  
@@ -38,7 +33,7 @@ const drawChart=()=>{
   return(
     <LineChart 
     data={{
-      labels:[title],
+      labels:['A'],
       
       datasets: [
         {
@@ -79,10 +74,18 @@ const drawChart=()=>{
 
   )
 }
+const mapeo=()=>{
+  dataApi.map((item, index)=>{
+    return(
+      
+    )
+  })
+}
   return (
     <View style={{ flex: 1, padding: 24 }}>
+    
    <Text>Ale</Text>
-   {drawChart()}
+   {mapeo()}
   </View>
   );
 };

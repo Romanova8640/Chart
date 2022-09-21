@@ -1,22 +1,13 @@
 
 
-import React, {useState} from 'react';
-import Chart1 from './Chart1';
-import Chart2 from './Chart2';
-import {
+import React from 'react';
 
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Chart3 from './Chart3';
-import Chart4 from './Chart4';
+import Balance from './Balance/Balance';
 
 
 const App =()=>{
   return(
-    <Chart4 />
+    <Balance/>
   )
 }
 

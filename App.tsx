@@ -10,11 +10,13 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import Chart3 from './Chart3';
+import Chart4 from './Chart4';
 
 
 const App =()=>{
   return(
-    <Chart1 />
+    <Chart4 />
   )
 }
 

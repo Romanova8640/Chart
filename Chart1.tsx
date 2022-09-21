@@ -1,6 +1,6 @@
 
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,6 +25,7 @@ const screenWidth = Dimensions.get("window").width;
 
 
 const Chart1 = () => {
+
 
   return (
     <View>
@@ -55,11 +56,13 @@ const Chart1 = () => {
         style={{backgroundColor:'#ccd5ae', width:150, marginHorizontal:110, height:40,}}
         onPress={()=>{
           data.datasets.map(({data}:any)=>{
-           const data2= data+Math.random().toFixed(2);
+           const data2= Number(...data+Math.random().toFixed(2));
            data=[...data,data2]
            console.log(data)
-           return data;
-          })
+           
+          }
+          )
+          return data;
         }} >
           <Text style={{color:'white', fontSize:20, fontWeight:'bold', textAlign:'center', marginVertical:4.5, borderRadius:5}}>Click Me!</Text>
         </TouchableOpacity>
